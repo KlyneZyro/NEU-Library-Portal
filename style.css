@@ -1,0 +1,84 @@
+/* NEU Branding Colors */
+:root {
+    --neu-blue: #0a2d5e;
+    --neu-gold: #d4af37;
+    --off-white: #f0f4f8;
+}
+
+body {
+    background-color: var(--off-white);
+}
+
+/* ── Reason & selection buttons ───────────────────────────── */
+.reason-btn {
+    transition: all 0.15s ease;
+}
+.reason-btn:active {
+    transform: scale(0.98);
+}
+.reason-btn.selected {
+    border-color: #d4af37 !important;
+    background-color: #fffbeb !important;
+    font-weight: 700;
+}
+
+.type-btn.selected,
+.dept-btn.selected {
+    border-color: #0a2d5e !important;
+    background-color: #eff6ff !important;
+    font-weight: 700;
+}
+
+/* ── Active pass ticket divider ───────────────────────────── */
+.ticket-divider {
+    position: relative;
+    border: none;
+    border-top: 2px dashed #e2e8f0;
+}
+.ticket-divider::before,
+.ticket-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #f0f4f8;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+}
+.ticket-divider::before { left: -20px; }
+.ticket-divider::after  { right: -20px; }
+
+/* ── Login dot-grid background pattern ───────────────────── */
+.login-dot-pattern {
+    background-image: radial-gradient(circle, rgba(255,255,255,0.4) 1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+/* ── Overdue book pulse ───────────────────────────────────── */
+.animate-pulse-fast {
+    animation: pulse-fast 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse-fast {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.4; }
+}
+
+/* ── Smooth scrollbar for history / admin tables ─────────── */
+#history-list::-webkit-scrollbar,
+#book-history-list::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar {
+    width: 4px;
+}
+#history-list::-webkit-scrollbar-track,
+#book-history-list::-webkit-scrollbar-track,
+.overflow-y-auto::-webkit-scrollbar-track {
+    background: transparent;
+}
+#history-list::-webkit-scrollbar-thumb,
+#book-history-list::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 4px;
+}
