@@ -4,6 +4,12 @@ A web-based library attendance system for New Era University, replacing the trad
 
 ---
 
+## 🔗 Live Demo
+
+> https://klynezyro.github.io/NEU-Library-Portal/
+
+---
+
 ## ✨ Features
 
 ### For Students / Faculty / Staff
@@ -39,6 +45,7 @@ A web-based library attendance system for New Era University, replacing the trad
 | Frontend | HTML, Tailwind CSS, Vanilla JavaScript (ES Modules) |
 | Auth | Firebase Authentication (Google OAuth) |
 | Database | Firebase Firestore (real-time) |
+| Hosting | GitHub Pages |
 
 ---
 
@@ -110,8 +117,8 @@ NEU-Library-Portal/
 
 ## 👤 Author
 
-**Klyne Zyro C. Reyes**  
-Bachelor of Science in Computer Science
+**Klyne Zyro Reyes**  
+Bachelor of Science in Computer Science 
 New Era University  
 
 ---
