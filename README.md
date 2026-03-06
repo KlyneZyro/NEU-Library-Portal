@@ -126,4 +126,4 @@ New Era University
 ## 📄 License
 
 This project was developed as an academic requirement.  
-© 2025 New Era University — All rights reserved.
+© 2026 New Era University — All rights reserved.
