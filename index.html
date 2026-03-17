@@ -36,42 +36,31 @@
                 <div class="w-8 h-8 bg-[#d4af37] rounded-lg flex items-center justify-center text-[10px] font-black text-[#0a2d5e]">NEU</div>
                 <div class="flex items-center gap-2 flex-wrap">
                     <span class="font-black tracking-tight text-sm md:text-base">NEU LIBRARY PORTAL</span>
-                    <!-- Library hours status badge — updated by JS -->
                     <span id="lib-status-badge" class="hidden text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-widest"></span>
                 </div>
             </div>
             <div class="flex items-center gap-2">
-                <button id="historyBtn" class="hidden text-xs bg-[#d4af37] px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition text-[#0a2d5e] font-black shadow-md">
-                    History
-                </button>
-                <button id="adminBtn" class="hidden text-xs bg-purple-500 px-3 py-1.5 rounded-lg hover:bg-purple-400 transition font-black shadow-md">
-                    Admin
-                </button>
+                <button id="historyBtn" class="hidden text-xs bg-[#d4af37] px-3 py-1.5 rounded-lg hover:bg-yellow-500 transition text-[#0a2d5e] font-black shadow-md">History</button>
+                <button id="adminBtn"   class="hidden text-xs bg-purple-500 px-3 py-1.5 rounded-lg hover:bg-purple-400 transition font-black shadow-md">Admin</button>
             </div>
         </div>
     </nav>
 
     <main class="max-w-md mx-auto mt-6 px-4 pb-12 md:max-w-2xl lg:max-w-4xl">
 
-        <!-- LOGIN VIEW -->
+        <!-- LOGIN -->
         <section id="login-ui" class="max-w-sm mx-auto">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
-                <!-- Header -->
                 <div class="bg-gradient-to-br from-[#0a2d5e] to-[#1a4d8e] p-8 text-center relative overflow-hidden">
                     <div class="absolute inset-0 login-dot-pattern opacity-10 pointer-events-none"></div>
                     <div class="relative z-10">
-                        <div class="w-16 h-16 bg-[#d4af37] rounded-2xl mx-auto mb-3 flex items-center justify-center text-[#0a2d5e] text-sm font-black shadow-lg">
-                            NEU
-                        </div>
+                        <div class="w-16 h-16 bg-[#d4af37] rounded-2xl mx-auto mb-3 flex items-center justify-center text-[#0a2d5e] text-sm font-black shadow-lg">NEU</div>
                         <h1 class="text-xl font-black text-white tracking-tight">Library Portal</h1>
                         <p class="text-blue-200 text-xs mt-1">New Era University</p>
                     </div>
                 </div>
-
                 <div class="p-6">
                     <p class="text-slate-500 text-sm text-center mb-5">Sign in with your institutional email to continue</p>
-
-                    <!-- BUGFIX: Persistent inline error (toast disappears too fast on auth redirect) -->
                     <div id="login-error-msg" class="hidden mb-4 bg-red-50 border border-red-200 rounded-xl p-3 flex items-start gap-2">
                         <span class="text-red-500 text-base flex-shrink-0 mt-0.5">&#x26D4;</span>
                         <div>
@@ -79,18 +68,16 @@
                             <p id="login-error-detail" class="text-red-600 text-xs mt-0.5 leading-relaxed"></p>
                         </div>
                     </div>
-
                     <button id="loginBtn" class="w-full py-3.5 bg-[#0a2d5e] text-white rounded-xl font-bold hover:bg-[#0d3a7a] transition shadow-lg flex items-center justify-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
                         <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/button/google/web/desktop/1x/g_logo.png" class="w-5 h-5 bg-white rounded-full p-0.5 flex-shrink-0" alt="Google">
                         <span id="loginBtnText">Sign in with Google</span>
                     </button>
-
                     <p class="text-center text-[10px] text-slate-400 mt-4">Only <span class="font-bold text-slate-600">@neu.edu.ph</span> accounts are accepted</p>
                 </div>
             </div>
         </section>
 
-        <!-- BLOCKED VIEW -->
+        <!-- BLOCKED -->
         <section id="blocked-ui" class="hidden max-w-sm mx-auto">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-t-4 border-red-600">
                 <div class="bg-red-600 p-6 text-center">
@@ -107,7 +94,7 @@
             </div>
         </section>
 
-        <!-- ONBOARDING VIEW -->
+        <!-- ONBOARDING -->
         <section id="onboarding-ui" class="hidden max-w-sm mx-auto">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
                 <div class="bg-gradient-to-r from-[#d4af37] to-[#e8c84a] p-5 text-center">
@@ -115,32 +102,16 @@
                     <h2 class="text-lg font-black text-[#0a2d5e]">Complete Your Profile</h2>
                     <p class="text-[#5a4010] text-xs mt-1 opacity-80">Your info is saved for all future visits</p>
                 </div>
-
                 <div class="p-6 space-y-5">
-                    <!-- Step 1: User Type -->
                     <div>
                         <label class="block text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">1 &#x2014; Select User Type</label>
                         <div class="grid grid-cols-2 gap-2">
-                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="student">
-                                <span class="text-xl">&#x1F393;</span>
-                                <p class="text-xs font-bold mt-1 text-slate-700">Student</p>
-                            </button>
-                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="faculty">
-                                <span class="text-xl">&#x1F468;&#x200D;&#x1F3EB;</span>
-                                <p class="text-xs font-bold mt-1 text-slate-700">Faculty</p>
-                            </button>
-                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="employee">
-                                <span class="text-xl">&#x1F454;</span>
-                                <p class="text-xs font-bold mt-1 text-slate-700">Employee</p>
-                            </button>
-                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="visitor">
-                                <span class="text-xl">&#x1F6B6;</span>
-                                <p class="text-xs font-bold mt-1 text-slate-700">Visitor</p>
-                            </button>
+                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="student"><span class="text-xl">&#x1F393;</span><p class="text-xs font-bold mt-1 text-slate-700">Student</p></button>
+                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="faculty"><span class="text-xl">&#x1F468;&#x200D;&#x1F3EB;</span><p class="text-xs font-bold mt-1 text-slate-700">Faculty</p></button>
+                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="employee"><span class="text-xl">&#x1F454;</span><p class="text-xs font-bold mt-1 text-slate-700">Employee</p></button>
+                            <button class="type-btn p-3 border-2 border-slate-200 rounded-xl text-left hover:border-[#0a2d5e] hover:bg-slate-50 transition" data-type="visitor"><span class="text-xl">&#x1F6B6;</span><p class="text-xs font-bold mt-1 text-slate-700">Visitor</p></button>
                         </div>
                     </div>
-
-                    <!-- Step 2: Department (hidden for visitors) -->
                     <div id="deptSection" class="hidden">
                         <label class="block text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">2 &#x2014; Department / College</label>
                         <div class="grid grid-cols-2 gap-2">
@@ -154,79 +125,47 @@
                             <button class="dept-btn p-2.5 border-2 border-slate-200 rounded-xl text-center text-xs font-bold hover:border-[#0a2d5e] hover:bg-slate-50 transition text-slate-700" data-dept="Other">Other</button>
                         </div>
                     </div>
-
-                    <!-- Step 3: ID Number -->
                     <div id="studentIdField" class="hidden">
                         <label id="studentIdLabel" class="block text-[10px] font-black text-slate-400 mb-2 uppercase tracking-widest">ID Number</label>
                         <input type="text" id="studentIdInput" placeholder="Enter your ID number" maxlength="30"
                             class="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-[#0a2d5e] outline-none text-sm transition">
                         <p id="studentIdHint" class="text-[10px] text-slate-400 mt-1.5"></p>
                     </div>
-
-                    <button id="saveProfileBtn" class="w-full py-4 bg-[#0a2d5e] text-white rounded-xl font-black opacity-40 cursor-not-allowed transition text-sm" disabled>
-                        Complete Setup
-                    </button>
+                    <button id="saveProfileBtn" class="w-full py-4 bg-[#0a2d5e] text-white rounded-xl font-black opacity-40 cursor-not-allowed transition text-sm" disabled>Complete Setup</button>
                 </div>
             </div>
         </section>
 
-        <!-- CHECK-IN VIEW -->
+        <!-- CHECK-IN -->
         <section id="checkin-ui" class="hidden max-w-sm mx-auto">
-            <!-- Greeting header -->
             <div class="bg-gradient-to-br from-[#0a2d5e] to-[#1a4d8e] rounded-2xl p-4 mb-4 flex justify-between items-center shadow-lg">
                 <div>
                     <p id="checkin-greeting" class="text-white font-bold text-sm">Good day!</p>
                     <p class="text-blue-200 text-xs mt-0.5">Select your reason to check in</p>
                 </div>
-                <!-- Current visitor count badge -->
                 <div id="current-visitors-badge" class="hidden bg-white bg-opacity-20 rounded-xl px-3 py-2 text-center border border-white border-opacity-20">
                     <p id="current-visitors-count" class="text-white font-black text-xl leading-none">0</p>
                     <p class="text-blue-200 text-[9px] uppercase tracking-wider mt-0.5">In Library</p>
                 </div>
             </div>
-
             <div class="bg-white rounded-3xl shadow-xl p-5">
                 <h2 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Select Reason for Visit</h2>
                 <div class="space-y-2">
-                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Study">
-                        <span class="text-lg flex-shrink-0">&#x1F4DA;</span>
-                        <span class="text-sm font-semibold text-slate-700">Study / Research</span>
-                    </button>
-                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Borrowing">
-                        <span class="text-lg flex-shrink-0">&#x1F4D6;</span>
-                        <span class="text-sm font-semibold text-slate-700">Borrow / Return Books</span>
-                    </button>
-                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Computer">
-                        <span class="text-lg flex-shrink-0">&#x1F4BB;</span>
-                        <span class="text-sm font-semibold text-slate-700">Computer Use</span>
-                    </button>
-                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Exam">
-                        <span class="text-lg flex-shrink-0">&#x270D;</span>
-                        <span class="text-sm font-semibold text-slate-700">Taking an Exam</span>
-                    </button>
-                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Reading">
-                        <span class="text-lg flex-shrink-0">&#x1F4F0;</span>
-                        <span class="text-sm font-semibold text-slate-700">Reading Materials</span>
-                    </button>
-                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Group Study">
-                        <span class="text-lg flex-shrink-0">&#x1F465;</span>
-                        <span class="text-sm font-semibold text-slate-700">Group Study</span>
-                    </button>
+                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Study"><span class="text-lg flex-shrink-0">&#x1F4DA;</span><span class="text-sm font-semibold text-slate-700">Study / Research</span></button>
+                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Borrowing"><span class="text-lg flex-shrink-0">&#x1F4D6;</span><span class="text-sm font-semibold text-slate-700">Borrow / Return Books</span></button>
+                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Computer"><span class="text-lg flex-shrink-0">&#x1F4BB;</span><span class="text-sm font-semibold text-slate-700">Computer Use</span></button>
+                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Exam"><span class="text-lg flex-shrink-0">&#x270D;</span><span class="text-sm font-semibold text-slate-700">Taking an Exam</span></button>
+                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Reading"><span class="text-lg flex-shrink-0">&#x1F4F0;</span><span class="text-sm font-semibold text-slate-700">Reading Materials</span></button>
+                    <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Group Study"><span class="text-lg flex-shrink-0">&#x1F465;</span><span class="text-sm font-semibold text-slate-700">Group Study</span></button>
                     <div>
-                        <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Others">
-                            <span class="text-lg flex-shrink-0">&#x1F50D;</span>
-                            <span class="text-sm font-semibold text-slate-700">Others</span>
-                        </button>
+                        <button class="reason-btn w-full p-3.5 border-2 border-slate-100 rounded-xl text-left hover:border-[#d4af37] hover:bg-amber-50 transition flex items-center gap-3" data-reason="Others"><span class="text-lg flex-shrink-0">&#x1F50D;</span><span class="text-sm font-semibold text-slate-700">Others</span></button>
                         <input type="text" id="customReason" placeholder="Please specify your reason..." maxlength="100"
                             class="hidden mt-2 w-full p-3 border-2 border-slate-200 rounded-xl focus:border-[#0a2d5e] outline-none text-sm transition">
                     </div>
-
                     <button id="confirmCheckIn" class="w-full mt-2 py-4 bg-gradient-to-r from-[#d4af37] to-[#e8c84a] text-[#0a2d5e] rounded-xl font-black hidden hover:opacity-90 transition disabled:opacity-50 disabled:cursor-not-allowed shadow-lg text-sm tracking-wide">
                         &#x2714; Confirm Entry to Library
                     </button>
                 </div>
-
-                <!-- Borrowed books widget -->
                 <div class="mt-6 pt-5 border-t border-dashed border-slate-200">
                     <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">My Borrowed Books</h3>
                     <div id="user-books-list-checkin" class="space-y-2"></div>
@@ -234,18 +173,14 @@
             </div>
         </section>
 
-        <!-- ACTIVE PASS VIEW -->
+        <!-- ACTIVE PASS -->
         <section id="active-pass-ui" class="hidden max-w-sm mx-auto">
-            <!-- Live clock banner -->
             <div class="bg-gradient-to-br from-[#0a2d5e] to-[#1a4d8e] rounded-2xl p-5 text-center mb-3 shadow-xl">
                 <p class="text-blue-300 text-[10px] font-black uppercase tracking-widest mb-1">Current Time</p>
                 <div id="live-clock" class="text-4xl font-mono font-black text-white tracking-tight">00:00:00</div>
                 <div id="live-date" class="text-blue-300 text-xs mt-1 font-medium">Loading...</div>
             </div>
-
-            <!-- Ticket-style pass card -->
             <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-green-200">
-                <!-- Green active bar -->
                 <div class="bg-gradient-to-r from-green-500 to-emerald-500 py-2 px-4 flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <span class="inline-block w-2 h-2 bg-white rounded-full animate-pulse"></span>
@@ -253,9 +188,7 @@
                     </div>
                     <span class="text-white text-[10px] font-bold opacity-80">NEU Library</span>
                 </div>
-
                 <div class="p-5">
-                    <!-- Name & type -->
                     <div class="flex items-start justify-between gap-3 mb-4">
                         <div>
                             <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Name</p>
@@ -267,17 +200,11 @@
                             <p id="pass-dept" class="text-[#d4af37] font-bold text-xs mt-1.5">---</p>
                         </div>
                     </div>
-
-                    <!-- Elapsed timer -->
                     <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl p-4 text-center mb-4 border border-slate-200">
                         <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Time In Library</p>
                         <p id="pass-elapsed" class="text-3xl font-mono font-black text-[#0a2d5e] tracking-tight">0m 0s</p>
                     </div>
-
-                    <!-- Ticket perforation divider -->
                     <div class="ticket-divider my-4"></div>
-
-                    <!-- Check-in details -->
                     <div class="flex justify-between items-center text-xs mb-4">
                         <div>
                             <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-0.5">Check-in Time</p>
@@ -288,13 +215,10 @@
                             <p id="pass-reason" class="font-bold text-slate-700 text-sm">---</p>
                         </div>
                     </div>
-
-                    <!-- Borrowed books -->
                     <div class="bg-slate-50 rounded-xl p-3 mb-4 border border-slate-100">
                         <h3 class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-2">My Borrowed Books</h3>
                         <div id="user-books-list-active" class="space-y-1.5"></div>
                     </div>
-
                     <button id="checkoutBtn" class="w-full py-4 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl font-black shadow-lg active:scale-95 transition hover:from-red-600 hover:to-red-700 text-sm tracking-wide">
                         Check Out &amp; Exit
                     </button>
@@ -302,7 +226,7 @@
             </div>
         </section>
 
-        <!-- CHECKOUT SUCCESS VIEW -->
+        <!-- CHECKOUT SUCCESS -->
         <section id="checkout-success-ui" class="hidden max-w-sm mx-auto">
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
                 <div class="bg-gradient-to-br from-green-500 to-emerald-600 p-7 text-center">
@@ -310,7 +234,6 @@
                     <h2 class="text-xl font-black text-white">Checked Out!</h2>
                     <p class="text-green-100 text-xs mt-1">Thank you for visiting the NEU Library</p>
                 </div>
-
                 <div class="p-6">
                     <div class="grid grid-cols-2 gap-3 mb-4">
                         <div class="bg-slate-50 rounded-xl p-3 border border-slate-100 text-center">
@@ -326,20 +249,16 @@
                         <p class="text-[9px] uppercase font-black text-blue-400 tracking-widest mb-0.5">Total Duration</p>
                         <p class="text-blue-700 font-black text-xl"><span id="duration-display">--</span></p>
                     </div>
-
                     <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-4 text-center">
                         <p class="text-xs text-amber-700 font-bold mb-0.5">Show this screen to the librarian</p>
                         <p class="text-[10px] text-amber-600">Auto-logout in <span id="logout-countdown" class="font-black text-xl text-amber-800">15</span> seconds</p>
                     </div>
-
-                    <button onclick="performLogout()" class="w-full py-3 bg-[#0a2d5e] text-white rounded-xl font-black hover:bg-[#0d3a7a] transition text-sm">
-                        Logout Now
-                    </button>
+                    <button onclick="performLogout()" class="w-full py-3 bg-[#0a2d5e] text-white rounded-xl font-black hover:bg-[#0d3a7a] transition text-sm">Logout Now</button>
                 </div>
             </div>
         </section>
 
-        <!-- HISTORY VIEW -->
+        <!-- HISTORY -->
         <section id="history-ui" class="hidden bg-white rounded-3xl shadow-xl max-w-2xl mx-auto max-h-[90vh] overflow-y-auto">
             <div class="flex justify-between items-center p-5 sticky top-0 bg-white z-10 border-b border-slate-100">
                 <h2 class="text-lg font-black text-[#0a2d5e] uppercase tracking-wide">My Records</h2>
@@ -349,24 +268,18 @@
                 <div>
                     <div class="flex justify-between items-center mb-3">
                         <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest">Library Visits</h3>
-                        <button id="exportHistoryBtn" class="text-[10px] font-black bg-green-600 text-white px-3 py-1.5 rounded-lg hover:bg-green-700 transition shadow-sm">
-                            Export CSV
-                        </button>
+                        <button id="exportHistoryBtn" class="text-[10px] font-black bg-green-600 text-white px-3 py-1.5 rounded-lg hover:bg-green-700 transition shadow-sm">Export CSV</button>
                     </div>
-                    <div id="history-list" class="space-y-2 max-h-64 overflow-y-auto pr-1">
-                        <p class="text-center text-slate-400 py-4 text-sm">Loading visits...</p>
-                    </div>
+                    <div id="history-list" class="space-y-2 max-h-64 overflow-y-auto pr-1"></div>
                 </div>
                 <div>
                     <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3">Borrowed Books History</h3>
-                    <div id="book-history-list" class="space-y-2 max-h-64 overflow-y-auto pr-1">
-                        <p class="text-center text-slate-400 py-4 text-sm">Loading books...</p>
-                    </div>
+                    <div id="book-history-list" class="space-y-2 max-h-64 overflow-y-auto pr-1"></div>
                 </div>
             </div>
         </section>
 
-        <!-- ADMIN VIEW -->
+        <!-- ADMIN — tabbed: Logs | Users | Books | Blocked -->
         <section id="admin-ui" class="hidden bg-white rounded-3xl shadow-xl w-full">
             <div class="flex justify-between items-center p-5 border-b border-slate-100">
                 <div class="flex items-center gap-3">
@@ -378,123 +291,159 @@
                 <button id="closeAdminBtn" class="text-sm text-slate-400 hover:text-red-500 font-bold transition">&#x2715; Close</button>
             </div>
 
+            <!-- Tabs bar -->
+            <div class="flex border-b border-slate-200 px-5 gap-1 pt-3 overflow-x-auto">
+                <button data-tab="logs"    class="admin-tab-btn flex-shrink-0 px-4 py-2 text-xs font-black uppercase tracking-wider border-b-2 border-[#0a2d5e] text-[#0a2d5e] transition">📋 Logs</button>
+                <button data-tab="users"   class="admin-tab-btn flex-shrink-0 px-4 py-2 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-[#0a2d5e] transition">👥 Users</button>
+                <button data-tab="books"   class="admin-tab-btn flex-shrink-0 px-4 py-2 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-[#0a2d5e] transition">📚 Books</button>
+                <button data-tab="blocked" class="admin-tab-btn flex-shrink-0 px-4 py-2 text-xs font-black uppercase tracking-wider border-b-2 border-transparent text-slate-400 hover:text-[#0a2d5e] transition">🚫 Blocked</button>
+            </div>
+
             <div class="p-5">
-                <!-- Stats -->
-                <div class="grid grid-cols-3 gap-3 mb-5">
-                    <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-2xl border border-green-200 text-center shadow-sm">
-                        <p id="stat-active" class="text-3xl font-black text-green-700 leading-none">0</p>
-                        <p class="text-[9px] uppercase font-black text-green-500 tracking-widest mt-1">Active Now</p>
+
+                <!-- PANE: LOGS -->
+                <div id="adminPane-logs" class="admin-pane">
+                    <div class="grid grid-cols-3 gap-3 mb-5">
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-4 rounded-2xl border border-green-200 text-center shadow-sm">
+                            <p id="stat-active" class="text-3xl font-black text-green-700 leading-none">0</p>
+                            <p class="text-[9px] uppercase font-black text-green-500 tracking-widest mt-1">Active Now</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-2xl border border-blue-200 text-center shadow-sm">
+                            <p id="stat-today" class="text-3xl font-black text-blue-700 leading-none">0</p>
+                            <p class="text-[9px] uppercase font-black text-blue-500 tracking-widest mt-1">Today</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-2xl border border-purple-200 text-center shadow-sm">
+                            <p id="stat-total" class="text-3xl font-black text-purple-700 leading-none">0</p>
+                            <p class="text-[9px] uppercase font-black text-purple-500 tracking-widest mt-1">Loaded</p>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-blue-50 to-sky-50 p-4 rounded-2xl border border-blue-200 text-center shadow-sm">
-                        <p id="stat-today" class="text-3xl font-black text-blue-700 leading-none">0</p>
-                        <p class="text-[9px] uppercase font-black text-blue-500 tracking-widest mt-1">Today</p>
+                    <div class="bg-slate-50 p-4 rounded-2xl mb-4 border border-slate-200 space-y-2.5">
+                        <div class="flex gap-2 flex-wrap items-center">
+                            <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Filters:</span>
+                            <select id="filterStatus" class="px-2.5 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
+                                <option value="">All Status</option><option value="Active">Active</option><option value="Completed">Completed</option>
+                            </select>
+                            <select id="filterDept" class="px-2.5 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
+                                <option value="">All Departments</option>
+                                <option value="BSCS">BSCS</option><option value="BSIT">BSIT</option><option value="BSIS">BSIS</option><option value="BSEMC">BSEMC</option>
+                                <option value="Engineering">Engineering</option><option value="Business">Business</option><option value="Education">Education</option>
+                                <option value="Other">Other</option><option value="N/A">Visitor / Guest</option>
+                            </select>
+                            <button id="exportAdminBtn" class="ml-auto text-[10px] font-black px-3 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition shadow-sm">Export CSV</button>
+                        </div>
+                        <div class="flex gap-2 flex-wrap items-center">
+                            <input type="text" id="adminSearch" placeholder="Search name, email or ID..." class="flex-1 min-w-[160px] px-2.5 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
+                            <div class="flex items-center gap-1"><label class="text-[9px] text-slate-400 font-bold whitespace-nowrap">From:</label><input type="date" id="filterDateFrom" class="px-2 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white"></div>
+                            <div class="flex items-center gap-1"><label class="text-[9px] text-slate-400 font-bold whitespace-nowrap">To:</label><input type="date" id="filterDateTo" class="px-2 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white"></div>
+                            <button id="clearFiltersBtn" class="px-3 py-2 bg-slate-200 text-slate-600 rounded-xl text-[10px] font-black hover:bg-slate-300 transition">Clear</button>
+                        </div>
                     </div>
-                    <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-4 rounded-2xl border border-purple-200 text-center shadow-sm">
-                        <p id="stat-total" class="text-3xl font-black text-purple-700 leading-none">0</p>
-                        <p class="text-[9px] uppercase font-black text-purple-500 tracking-widest mt-1">Loaded</p>
+                    <div class="overflow-x-auto max-h-[460px] overflow-y-auto border border-slate-200 rounded-2xl shadow-inner">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gradient-to-r from-[#0a2d5e] to-[#1a4d8e] text-white sticky top-0 z-10">
+                                <tr>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Name / ID</th>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Dept</th>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Check-in</th>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Status</th>
+                                    <th class="p-3 text-center text-[10px] font-black uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-logs-body" class="bg-white divide-y divide-slate-100">
+                                <tr><td colspan="5" class="p-8 text-center text-slate-400 italic text-sm">Connecting to live data...</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                    <!-- Book panel -->
-                    <div class="lg:col-span-1 bg-slate-50 p-4 rounded-2xl border border-slate-200">
-                        <h3 class="text-sm font-black text-[#0a2d5e] mb-4 pb-2 border-b border-slate-200">Issue Book</h3>
-                        <div class="space-y-2.5 mb-5">
-                            <input type="email" id="bookUserEmail" placeholder="Student @neu.edu.ph Email"
-                                class="w-full p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
-                            <input type="text" id="bookTitleInput" placeholder="Book Title / ISBN"
-                                class="w-full p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
-                            <div>
-                                <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Due Date</label>
-                                <input type="date" id="bookDueDate"
-                                    class="w-full p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
-                            </div>
-                            <button id="issueBookBtn" class="w-full bg-[#0a2d5e] text-white p-2.5 rounded-xl text-xs font-black shadow hover:bg-[#0d3a7a] transition">
-                                Assign Book
-                            </button>
-                        </div>
-                        <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Active Borrowed Books</h3>
-                        <div class="overflow-y-auto max-h-56 border border-slate-200 rounded-xl bg-white">
-                            <table class="w-full text-xs">
-                                <thead class="bg-slate-100 sticky top-0">
-                                    <tr>
-                                        <th class="p-2 text-left text-[9px] font-black text-slate-500 uppercase">Email</th>
-                                        <th class="p-2 text-left text-[9px] font-black text-slate-500 uppercase">Book</th>
-                                        <th class="p-2 text-left text-[9px] font-black text-slate-500 uppercase">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="admin-books-body"></tbody>
-                            </table>
-                        </div>
+                <!-- PANE: USERS -->
+                <div id="adminPane-users" class="admin-pane hidden">
+                    <div class="flex gap-2 mb-4 flex-wrap items-center">
+                        <input type="text" id="userSearch" placeholder="Search by name, email, or ID..."
+                            class="flex-1 min-w-[200px] px-3 py-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
+                        <select id="userTypeFilter" class="px-2.5 py-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
+                            <option value="">All Types</option>
+                            <option value="student">Student</option><option value="faculty">Faculty</option>
+                            <option value="employee">Employee</option><option value="visitor">Visitor</option>
+                        </select>
+                        <select id="userRoleFilter" class="px-2.5 py-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
+                            <option value="">All Roles</option>
+                            <option value="user">User</option><option value="admin">Admin</option>
+                        </select>
+                        <button id="loadUsersBtn" class="px-4 py-2.5 bg-[#0a2d5e] text-white rounded-xl text-xs font-black hover:bg-[#0d3a7a] transition shadow-sm">🔍 Search</button>
                     </div>
-
-                    <!-- Logs panel -->
-                    <div class="lg:col-span-2">
-                        <!-- Filters -->
-                        <div class="bg-slate-50 p-4 rounded-2xl mb-4 border border-slate-200 space-y-2.5">
-                            <div class="flex gap-2 flex-wrap items-center">
-                                <span class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Filters:</span>
-                                <select id="filterStatus" class="px-2.5 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
-                                    <option value="">All Status</option>
-                                    <option value="Active">Active</option>
-                                    <option value="Completed">Completed</option>
-                                </select>
-                                <select id="filterDept" class="px-2.5 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
-                                    <option value="">All Departments</option>
-                                    <option value="BSCS">BSCS</option>
-                                    <option value="BSIT">BSIT</option>
-                                    <option value="BSIS">BSIS</option>
-                                    <option value="BSEMC">BSEMC</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Business">Business</option>
-                                    <option value="Education">Education</option>
-                                    <option value="Other">Other</option>
-                                    <option value="N/A">Visitor / Guest</option>
-                                </select>
-                                <button id="exportAdminBtn" class="ml-auto text-[10px] font-black px-3 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition shadow-sm">
-                                    Export CSV
-                                </button>
-                            </div>
-                            <div class="flex gap-2 flex-wrap items-center">
-                                <input type="text" id="adminSearch" placeholder="Search name, email or ID..."
-                                    class="flex-1 min-w-[160px] px-2.5 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
-                                <div class="flex items-center gap-1">
-                                    <label class="text-[9px] text-slate-400 font-bold whitespace-nowrap">From:</label>
-                                    <input type="date" id="filterDateFrom" class="px-2 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
-                                </div>
-                                <div class="flex items-center gap-1">
-                                    <label class="text-[9px] text-slate-400 font-bold whitespace-nowrap">To:</label>
-                                    <input type="date" id="filterDateTo" class="px-2 py-2 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white">
-                                </div>
-                                <button id="clearFiltersBtn" class="px-3 py-2 bg-slate-200 text-slate-600 rounded-xl text-[10px] font-black hover:bg-slate-300 transition">
-                                    Clear
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="overflow-x-auto max-h-[460px] overflow-y-auto border border-slate-200 rounded-2xl shadow-inner">
-                            <table class="w-full text-sm">
-                                <thead class="bg-gradient-to-r from-[#0a2d5e] to-[#1a4d8e] text-white sticky top-0 z-10">
-                                    <tr>
-                                        <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Name / ID</th>
-                                        <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Dept</th>
-                                        <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Check-in</th>
-                                        <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Status</th>
-                                        <th class="p-3 text-center text-[10px] font-black uppercase tracking-wider">Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="admin-logs-body" class="bg-white divide-y divide-slate-100">
-                                    <tr><td colspan="5" class="p-8 text-center text-slate-400 italic text-sm">Connecting to live data...</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="overflow-x-auto max-h-[500px] overflow-y-auto border border-slate-200 rounded-2xl shadow-inner">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gradient-to-r from-[#0a2d5e] to-[#1a4d8e] text-white sticky top-0 z-10">
+                                <tr>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">User</th>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Type / Dept</th>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Role</th>
+                                    <th class="p-3 text-left text-[10px] font-black uppercase tracking-wider">Status</th>
+                                    <th class="p-3 text-center text-[10px] font-black uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-users-body" class="bg-white divide-y divide-slate-100">
+                                <tr><td colspan="5" class="p-8 text-center text-slate-400 italic text-sm">Click Search to load users.</td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+
+                <!-- PANE: BOOKS -->
+                <div id="adminPane-books" class="admin-pane hidden">
+                    <div class="space-y-2.5 mb-5 max-w-sm">
+                        <h3 class="text-sm font-black text-[#0a2d5e] mb-3">Issue Book to User</h3>
+                        <input type="email" id="bookUserEmail" placeholder="Student @neu.edu.ph Email" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
+                        <input type="text" id="bookTitleInput" placeholder="Book Title / ISBN" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
+                        <div>
+                            <label class="text-[9px] font-black text-slate-400 uppercase tracking-widest block mb-1">Due Date</label>
+                            <input type="date" id="bookDueDate" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
+                        </div>
+                        <button id="issueBookBtn" class="w-full bg-[#0a2d5e] text-white p-2.5 rounded-xl text-xs font-black shadow hover:bg-[#0d3a7a] transition">Assign Book</button>
+                    </div>
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Active Borrowed Books</h3>
+                    <div class="overflow-y-auto max-h-80 border border-slate-200 rounded-xl bg-white">
+                        <table class="w-full text-xs">
+                            <thead class="bg-slate-100 sticky top-0">
+                                <tr>
+                                    <th class="p-2 text-left text-[9px] font-black text-slate-500 uppercase">Email</th>
+                                    <th class="p-2 text-left text-[9px] font-black text-slate-500 uppercase">Book</th>
+                                    <th class="p-2 text-left text-[9px] font-black text-slate-500 uppercase">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-books-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- PANE: BLOCKED -->
+                <div id="adminPane-blocked" class="admin-pane hidden">
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-5">
+                        <h3 class="text-sm font-black text-[#0a2d5e] mb-1">Pre-block an Email Address</h3>
+                        <p class="text-[10px] text-slate-500 mb-3">Block a @neu.edu.ph address before they register. They will be denied access even on first login.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <input type="email" id="preBlockEmail" placeholder="email@neu.edu.ph"
+                                class="flex-1 min-w-[180px] p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-red-400 bg-white transition">
+                            <input type="text" id="preBlockReason" placeholder="Reason (optional)" maxlength="100"
+                                class="flex-1 min-w-[140px] p-2.5 border border-slate-200 rounded-xl text-xs outline-none focus:border-[#0a2d5e] bg-white transition">
+                            <button id="preBlockBtn" class="px-4 py-2.5 bg-red-600 text-white rounded-xl text-xs font-black hover:bg-red-700 transition shadow-sm whitespace-nowrap">🚫 Block Email</button>
+                        </div>
+                    </div>
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Pre-blocked Email Addresses</h3>
+                    <div id="preblock-list" class="space-y-2 max-h-52 overflow-y-auto mb-6 pr-1">
+                        <p class="text-xs text-slate-400 italic text-center py-3">Loading...</p>
+                    </div>
+                    <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Suspended Registered Users</h3>
+                    <div id="banned-users-list" class="space-y-2 max-h-52 overflow-y-auto pr-1">
+                        <p class="text-xs text-slate-400 italic text-center py-3">Loading...</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
     </main>
-
     <script type="module" src="app.js"></script>
 </body>
 </html>
